@@ -152,7 +152,8 @@ class PyGs(object):
             xdpi = round(x_pt/width*xdensity)
             ydpi = round(y_pt/height*ydensity)
             self.output_dpi = xdpi
-            if ydpi>xdpi: self.output_dpi = ydpi
+            if ydpi>xdpi:
+                self.output_dpi = ydpi
             if self.output_dpi < 300: self.output_dpi = 300
             if abs(xdpi-ydpi) > xdpi*.05:  # Make sure the two dpi's are within 5%
                 self._warn("X-dpi is %d, Y-dpi is %d, defaulting to %d" % (xdpi, ydpi, self.output_dpi))
